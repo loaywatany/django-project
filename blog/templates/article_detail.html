@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>{{ object.title }}</h1>
+<p>{{ object.content }}</p>
+<form action='./' method="GET">
+    <button type='submit'>Go back</button>
+
+</form>
+{% endblock %}

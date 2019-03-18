@@ -1,0 +1,31 @@
+
+{% extends "base.html" %}
+{% block content %}
+<h1>Aboutus Page</h1>
+<h3>{{ title|capfirst|upper }}</h3>
+<p>This is a template</p>
+
+<p>
+    {{ my_number }},
+     {{ my_list }}
+</p>
+
+{{ my_html|striptags|slugify }}
+
+<ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+</ul>
+
+<ul>
+{% for abc in my_list %}
+    {% if abc == 312 %}
+    <li>{{ forloop.counter }} - {{ abc|add:22 }}</li>
+    {% elif abc == "Abc" %}
+    <li>this is not a network</li>
+    {% else %}
+    {{ forloop.counter}} - {{ abc }}
+    {% endif %}
+{% endfor %}
+</ul>
+{% endblock content %}
